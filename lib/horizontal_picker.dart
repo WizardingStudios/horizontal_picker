@@ -61,18 +61,20 @@ class _HorizontalPickerState extends State<HorizontalPicker> {
   }
 
   void setScrollController() {
-    int initialItem;
-    switch (widget.initialPosition) {
-      case InitialPosition.start:
-        initialItem = 0;
-        break;
-      case InitialPosition.center:
-        initialItem = (valueMap.length ~/ 2);
-        break;
-      case InitialPosition.end:
-        initialItem = valueMap.length - 1;
-        break;
-    }
+    int initialItem = (widget.initialValue ~/ ((widget.maxValue - widget.minValue)/widget.divisions))
+-(widget.minValue ~/ ((widget.maxValue - widget.minValue)/widget.divisions));
+    //int initialItem;
+    //switch (widget.initialPosition) {
+    //  case InitialPosition.start:
+    //    initialItem = 0;
+    //    break;
+    //  case InitialPosition.center:
+    //    initialItem = (valueMap.length ~/ 2);
+    //    break;
+    //  case InitialPosition.end:
+    //    initialItem = valueMap.length - 1;
+    //    break;
+    //}
 
     _scrollController = FixedExtentScrollController(initialItem: initialItem);
   }
