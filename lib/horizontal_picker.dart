@@ -48,15 +48,18 @@ class _HorizontalPickerState extends State<HorizontalPicker> {
   @override
   void initState() {
     super.initState();
-
-    for (var i = 0; i <= widget.divisions; i++) {
-      valueMap.add({
-        "value": widget.minValue +
-            ((widget.maxValue - widget.minValue) / widget.divisions) * i,
-        "fontSize": 14.0,
-        "color": widget.passiveItemsTextColor,
-      });
-    }
+    for (var i = 0; i <= widget.divisions; i++)
+    { var num = widget.minValue + ((widget.maxValue - widget.minValue) / widget.divisions) * i;
+     valueMap.add({ "value": num, "fontSize": 14.0, "color": widget.initialValue == num ? widget.activeItemTextColor : widget.passiveItemsTextColor, }); }
+    
+    //for (var i = 0; i <= widget.divisions; i++) {
+    //  valueMap.add({
+    //    "value": widget.minValue +
+    //        ((widget.maxValue - widget.minValue) / widget.divisions) * i,
+    //    "fontSize": 14.0,
+    //    "color": widget.passiveItemsTextColor,
+    //  });
+    //}
     setScrollController();
   }
 
