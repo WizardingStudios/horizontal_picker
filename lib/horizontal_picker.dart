@@ -18,6 +18,7 @@ class HorizontalPicker extends StatefulWidget {
   final Color activeItemTextColor;
   final Color passiveItemsTextColor;
   final String suffix;
+  final int initialValue;
 
   HorizontalPicker({
     required this.minValue,
@@ -25,6 +26,7 @@ class HorizontalPicker extends StatefulWidget {
     required this.divisions,
     required this.height,
     required this.onChanged,
+    required this.initialValue,
     this.initialPosition = InitialPosition.center,
     this.backgroundColor = Colors.white,
     this.showCursor = true,
